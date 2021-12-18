@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Web Authentication</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+  <script>
+    var publicKey = {
+      challenge: new Uint8Array([21, 31, 105]), // Random 32byte challenge buffer
+
+      rp: {
+        name: "ACME Corporation" // Friendly RP name
+      },
+
+      user: {
+        id: Uint8Array.from(window.atob("MIIBkzCCATigAwIBAjCCAZMwggE4oAMCAQIwggGTMII="), c => c.charCodeAt(0)),
+        name: "gooryong",
+        displayName: "Alex P. Müller"
+      },
+
+      attestation: 'direct',
+
+      pubKeyCredParams: [
+        {
+          type: "public-key", alg: -7 // "ES256" IANA COSE Algorithms registry
+        },
+        {
+          type: "public-key", alg: -257 // "RS256" IANA COSE Algorithms registry
+        }
+      ]
+    }
+    navigator.credentials.create({ publicKey })
+      .then((newCredentialInfo) => {
+        console.log(newCredentialInfo)
+        /* Public key credential */
+      }).catch((error) => {
+        console.log(error)
+        /* Error */
+      })
+  </script>
+</body>
+
+</html>

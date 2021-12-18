@@ -1,0 +1,5 @@
+export const BTN_LOADING = 'BTN_LOADING';
+export const GET_DATA_ASYNC = 'GET_DATA_ASYNC';
+export const BTN_LOADING_DONE = 'BTN_LOADING_DONE';
+export const USER_DATAS = 'USER_DATAS';
+export const CANCEL_DATA_ASYNC = 'CANCEL_DATA_ASYNC';

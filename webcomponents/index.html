@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>456</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <h3>list default</h3>
+    <list-default></list-default>
+    <h3>list template</h3>
+    <list-template></list-template>
+    <h3>list attrbutes</h3>
+    <list-attrbutes items='["Apples", "Pears", "Oranges"]'></list-attrbutes>
+    <h3>list shadow</h3>
+    <list-shadow items='["Apples", "Pears", "Oranges"]'></list-shadow>
+    <h3>list template with js</h3>
+    <list-template-withjs></list-template-withjs>
+    <script type="module" src="./components//list/default.mjs"></script>
+    <script type="module" src="./components//list/template.mjs"></script>
+    <script type="module" src="./components//list/attrbutes.mjs"></script>
+    <script type="module" src="./components//list/shadow.mjs"></script>
+    <script type="module" src="./components//list/templateWithJs.mjs"></script>
+    <template id="list">
+      <style>
+        :host{}
+        #s .item{padding-left: 50px;}
+      </style>
+      <div class="ui list" id="s">
+        <div class="item">Apples</div>
+        <div class="item">Pears</div>
+        <div class="item">Oranges</div>
+      </div>
+    </template>
+  </body>
+</html>
