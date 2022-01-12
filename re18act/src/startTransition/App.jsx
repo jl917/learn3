@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import React, { startTransition, useTransition, useDeferredValue } from 'react/cjs/react.development';
+import React, { useState, startTransition, useTransition, useDeferredValue } from 'react/cjs/react.development';
 
 const arr = new Array(10000).fill(0);
 
@@ -22,18 +21,26 @@ function App () {
       setValue(e.target.value);
     })
   }
-
+  console.log(pending)
   // useDeferedValue
   const a = useDeferredValue(value);
+
+  // no startTransition
+  const onChange3 = (e) => {
+    setValue(e.target.value);
+  }
 
   return (
     <div>
       <h1>{a}</h1>
       <div>
-        <input onChange={onChange} />
+        <input onChange={onChange} placeholder="startTransition" />
       </div>
       <div>
-        <input onChange={onChange2} />
+        <input onChange={onChange2} placeholder="useTransition" />
+      </div>
+      <div>
+        <input onChange={onChange3} placeholder="default" />
       </div>
       <ul>
         {

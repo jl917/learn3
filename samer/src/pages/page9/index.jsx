@@ -13,6 +13,7 @@ const Page = () => {
   // loadable
   // const userLoadable = useRecoilValueLoadable(st);
   const [{state, contents}, setUserLoadable] = useRecoilStateLoadable(st);
+  console.log(setUserLoadable)
 
   return (
     <div>
@@ -20,7 +21,7 @@ const Page = () => {
       <h3>
         {state === 'loading' ? 'loading' : ''}
         {state === 'hasError' ? 'error' : ''}
-        {state === 'hasValue' ? contents.data.results[0].login.username : ''}
+        {state === 'hasValue' ? contents?.data?.results[0].login.username : ''}
       </h3>
       <button onClick={() => setUserLoadable(getData())}>새로고침</button>
     </div>

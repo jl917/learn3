@@ -5,7 +5,6 @@ const countAtom = atom({
   key: 'count',
   default: 0,
 })
-
 const countReducer = () => {
   const [count, setCount] = useRecoilState(countAtom);
   const inc = () => setCount(count + 1);

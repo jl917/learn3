@@ -1,6 +1,6 @@
 const array = [];
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 17; i++) {
   array.push(i + 1);
 }
 

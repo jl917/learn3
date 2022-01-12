@@ -23,7 +23,7 @@ render(
       <Provider store={store}>
         <Router />
       </Provider>
-      <ReactQueryDevtools initialIsOpen={true} />
+      {/* <ReactQueryDevtools initialIsOpen={true} /> */}
     </QueryClientProvider>
   </RecoilRoot>,
   document.getElementById('app'),
