@@ -1,4 +1,4 @@
-import React, { useState, startTransition, useTransition, useDeferredValue } from 'react/cjs/react.development';
+import React, { useState, startTransition, useTransition, useDeferredValue } from 'react';
 
 const arr = new Array(10000).fill(0);
 
