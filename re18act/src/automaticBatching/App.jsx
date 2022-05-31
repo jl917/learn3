@@ -44,10 +44,7 @@ function App () {
       flushSync(() => {
         setFlag(f => !f);
       });
-
-      flushSync(() => {
-        setFlag(f => !f);
-      });
+      setCount(c => c + 1);
     });
   }
 

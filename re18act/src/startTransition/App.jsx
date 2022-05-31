@@ -1,6 +1,6 @@
-import React, { useState, startTransition, useTransition, useDeferredValue } from 'react';
+import React, { useState, startTransition, useTransition, useDeferredValue, Suspense } from 'react';
 
-const arr = new Array(10000).fill(0);
+const arr = new Array(20000).fill(0);
 
 function App () {
   const [value, setValue] = useState('title');
@@ -18,10 +18,9 @@ function App () {
 
   const onChange2 = (e) => {
     startTransition2(() => {
-      setValue(e.target.value);
+      setValue(e.target.value)
     })
   }
-  console.log(pending)
   // useDeferedValue
   const a = useDeferredValue(value);
 
@@ -33,6 +32,7 @@ function App () {
   return (
     <div>
       <h1>{a}</h1>
+      <h2>{pending ? "loading" : 'no'}</h2>
       <div>
         <input onChange={onChange} placeholder="startTransition" />
       </div>
@@ -47,6 +47,7 @@ function App () {
           list.map((e, i) => <li key={i}>{value} - {i}</li>)
         }
       </ul>
+
     </div>
   );
 }
